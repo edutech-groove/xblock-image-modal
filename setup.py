@@ -12,7 +12,7 @@ with open(path.join(this_directory, 'README.rst')) as file_in:
     long_description = file_in.read()
 
 setup(
-    name='edt-xblock-image-modal',
+    name='xblock-image-modal',
     version=version,
     description=description,
     long_description=long_description,
