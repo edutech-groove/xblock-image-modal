@@ -23,8 +23,8 @@ function ImageModalView(runtime, element) {
     var wrapper = $element.find('.wrapper');
     var buttonFullScreen = wrapper.find('BUTTON.fullscreen');
     var buttonZoom = curtain.find('BUTTON.zoom');
-    var buttonZoomText = buttonZoom.find('SPAN');
-    var buttonZoomIcon = buttonZoom.find('I');
+    var buttonZoomOut = buttonZoom.find('.zoom-out');
+    var buttonZoomIn = buttonZoom.find('.zoom-in');
 
     /**
      * Prevent the default event from bubbling up
@@ -46,9 +46,8 @@ function ImageModalView(runtime, element) {
         var imageWidth;
         var imageHeight;
 
-        buttonZoomText.text('Zoom Out');
-        buttonZoomIcon.removeClass('icon-zoom-in');
-        buttonZoomIcon.addClass('icon-zoom-out');
+        buttonZoomOut.show();
+        buttonZoomIn.hide();
         image.off('.imagemodal');
         image.on('click.imagemodal_zoomin', preventDefault);
         image.addClass('zoomed');
@@ -101,9 +100,8 @@ function ImageModalView(runtime, element) {
      * @returns {undefined} nothing
      */
     function zoomOut() {
-        buttonZoomText.text('Zoom In');
-        buttonZoomIcon.removeClass('icon-zoom-out');
-        buttonZoomIcon.addClass('icon-zoom-in');
+        buttonZoomOut.hide();
+        buttonZoomIn.show();
         image.off('.imagemodal');
         // eslint-disable-next-line no-use-before-define
         image.on('click.imagemodal_zoomout', openModal);

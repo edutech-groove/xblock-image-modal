@@ -9,8 +9,12 @@
             />
         </a>
         <button class="fullscreen">
-            <i class="icon-fullscreen icon-large"></i>
-            <span>Fullscreen</span>
+            <div class="btn-content">
+                <svg width="448" height="512">
+                  <use xlink:href="#expand-icon"></use>
+                </svg>
+                <span>Fullscreen</span>
+            </div>
         </button>
     </div>
     <div class="curtain">
@@ -19,12 +23,26 @@
                 <img alt="{{alt_text}}" src="{{image_url}}" />
             </div>
             <button class="zoom">
-                <i class="icon-zoom-in icon-large"></i>
-                <span>Zoom In</span>
+                <div class="btn-content zoom-in">
+                    <svg width="512" height="512">
+                      <use xlink:href="#zoom-in-icon"></use>
+                    </svg>
+                    <span>Zoom In</span>
+                </div>
+                <div class="btn-content zoom-out" style="display: none;">
+                    <svg width="512" height="512">
+                      <use xlink:href="#zoom-out-icon"></use>
+                    </svg>
+                    <span>Zoom Out</span>
+                </div>
             </button>
             <button class="close">
-                <i class="icon-remove icon-large"></i>
-                <span>Close</span>
+                <div class="btn-content">
+                    <svg width="14.828" height="14.828">
+                      <use xlink:href="#close-icon"></use>
+                    </svg>
+                    <span>Close</span>
+                </div>
             </button>
         </div>
     </div>
